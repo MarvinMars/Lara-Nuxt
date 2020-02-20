@@ -1,0 +1,12 @@
+$primaryColor : rgba(0, 0, 0, 0.4);
+$textColorDark : #444;
+$textColorLight : #ccc;
+$borderColorLight : #ddd;
+$borderColorDark : #111;
+
+button{
+	outline: thick;
+	&:hover{
+		opacity: .9;
+	}
+}

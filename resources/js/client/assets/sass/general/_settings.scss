@@ -1,0 +1,368 @@
+/* Layout */
+body,
+html {
+  position: relative;
+  overflow-x: hidden;
+
+  &.disable-scroll {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+}
+
+body {
+  background-color: white;
+
+  &.project_opened,
+  &.inner_page {
+    .header__logo {
+      a.logo {
+        background-image: url(../../static/img/-gray.svg);
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      .header {
+        padding: 40px 50px 0;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      .header {
+        padding: 15px 15px 0;
+      }
+    }
+  }
+
+  &.layout__switcher {
+    overflow: visible;
+
+    .header {
+      &__nav {
+        .hamb {
+          background-color: transparent !important;
+
+          span {
+            background-color: white !important;
+          }
+        }
+
+        &.whitebg {
+          .hamb {
+            background-color: white !important;
+
+            span {
+              background-color: black !important;
+            }
+          }
+
+          .view {
+            background-color: white;
+
+            span {
+              background-color: black;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-down(xs) {
+        padding: 15px !important;
+        background-color: $darkBackground;
+      }
+    }
+  }
+
+  &.project_opened {
+    .header {
+      &__nav {
+        .hamb {
+          background-color: white;
+
+          span {
+            background-color: black;
+          }
+        }
+      }
+
+      @include media-breakpoint-down(xs) {
+        padding: 15px !important;
+        background-color: $darkBackground;
+
+        &__nav {
+          .hamb {
+            background-color: transparent;
+
+            span {
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.services_page {
+    .header__logo {
+      a.logo {
+        background-image: url(../../static/img/.svg) !important;
+      }
+    }
+
+    &.whitebg {
+      .header__logo {
+        a.logo {
+          background-image: url(../../static/img/-gray.svg) !important;
+        }
+
+        span {
+          color: $darkBackground;
+        }
+      }
+
+      .header {
+        &__nav {
+          .hamb {
+            background-color: white;
+
+            span {
+              background-color: black;
+            }
+          }
+        }
+      }
+    }
+
+    .header {
+      @include media-breakpoint-down(xs) {
+        padding: 15px 15px 0 !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+
+.wrapper {
+  &.inner_page {
+    .header {
+      &__nav {
+        .hamb {
+          background-color: white;
+
+          span {
+            background-color: black;
+          }
+        }
+      }
+
+      @include media-breakpoint-down(xs) {
+        padding: 15px !important;
+        background-color: $darkBackground;
+
+        &__nav {
+          .hamb {
+            background-color: transparent;
+
+            span {
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .header__logo {
+      a.logo {
+        background-image: url(../../static/img/-gray.svg);
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      .header {
+        padding: 40px 50px 0;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      .header {
+        padding: 15px 15px 0;
+      }
+    }
+  }
+}
+
+.wrapper2 {
+  .header {
+    &__nav {
+      .hamb {
+        background-color: white;
+
+        span {
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+
+button {
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.nuxt-progress {
+  height: 5px !important;
+  background-color: $slidesDarkBackground !important;
+}
+
+.spinner {
+  background-color: $lightText;
+}
+
+.bounce-enter-active {
+  animation: bounce-in .8s;
+}
+
+.bounce-leave-active {
+  animation: bounce-out .5s;
+}
+
+/* Fonts */
+@font-face {
+  font-family: 'Plain';
+  font-display: block;
+  src: url('~assets/fonts/Plain/Plain-Regular.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/Plain/Plain-Regular.otf') format('opentype'),
+  url('~assets/fonts/Plain/Plain-Regular.woff') format('woff'),
+  url('~assets/fonts/Plain/Plain-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plain';
+  font-display: block;
+  src: url('~assets/fonts/Plain/Plain-Bold.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/Plain/Plain-Bold.otf') format('opentype'),
+  url('~assets/fonts/Plain/Plain-Bold.woff') format('woff'),
+  url('~assets/fonts/Plain/Plain-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plain';
+  font-display: block;
+  src: url('~assets/fonts/Plain/Plain-Light.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/Plain/Plain-Light.otf') format('opentype'),
+  url('~assets/fonts/Plain/Plain-Light.woff') format('woff'),
+  url('~assets/fonts/Plain/Plain-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plain';
+  font-display: block;
+  src: url('~assets/fonts/Plain/Plain-Medium.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/Plain/Plain-Medium.otf') format('opentype'),
+  url('~assets/fonts/Plain/Plain-Medium.woff') format('woff'),
+  url('~assets/fonts/Plain/Plain-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  font-display: auto;
+  src: url('~assets/fonts/ProximaNova-Bold.eot');
+  src: url('~assets/fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/ProximaNova-Bold.woff') format('woff'),
+  url('~assets/fonts/ProximaNova-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  src: url('~assets/fonts/ProximaNova-Regular.eot');
+  src: url('~assets/fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/ProximaNova-Regular.woff') format('woff'),
+  url('~assets/fonts/ProximaNova-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-display: auto;
+  src: url('~assets/fonts/oswald-regular-webfont.woff2') format('woff2'),
+  url('~assets/fonts/oswald-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-display: auto;
+  src: url('~assets/fonts/Graphik/Graphik-Bold.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/Graphik/Graphik-Bold.woff') format('woff'),
+  url('~assets/fonts/Graphik/Graphik-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AdiHaus';
+  font-display: auto;
+  src: url('~assets/fonts/AdiHaus/AdiHaus-Regular.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/AdiHaus/AdiHaus-Regular.woff') format('woff'),
+  url('~assets/fonts/AdiHaus/AdiHaus-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TradeGothicLTStd-Bold';
+  font-display: auto;
+  src: url('~assets/fonts/TradeGothic/TradeGothicLTStd-Bold.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/TradeGothic/TradeGothicLTStd-Bold.otf') format('opentype'),
+  url('~assets/fonts/TradeGothic/TradeGothicLTStd-Bold.woff') format('woff'),
+  url('~assets/fonts/TradeGothic/TradeGothicLTStd-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Interstate-Bold';
+  font-display: auto;
+  src: url('~assets/fonts/interstate/FontBureauInterstateBold.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/interstate/FontBureauInterstateBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cambria';
+  font-display: auto;
+  src: url('~assets/fonts/cambria/Cambria.eot?#iefix') format('embedded-opentype'),
+  url('~assets/fonts/cambria/Cambria.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Undited Sans Cond';
+  src: url('~assets/fonts/UnitedSansCond/UnitedSansCond-Medium.eot?#iefix') format('embedded-opentype'), url('~assets/fonts/UnitedSansCond/UnitedSansCond-Medium.otf') format('opentype'),
+  url('~assets/fonts/UnitedSansCond/UnitedSansCond-Medium.woff') format('woff'), url('~assets/fonts/UnitedSansCond/UnitedSansCond-Medium.ttf') format('truetype'), url('~assets/fonts/UnitedSansCond/UnitedSansCond-Medium.svg#UnitedSansCond-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

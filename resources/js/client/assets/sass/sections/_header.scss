@@ -1,0 +1,407 @@
+/* Header */
+.header {
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 55px 80px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      z-index: 999;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a.logo {
+      width: 100px;
+      height: 30px;
+      background-image: url(../../static/img/.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      text-decoration: none;
+
+      @include transition(0.3s);
+    }
+
+    span {
+      @include plain(12px, #d3d3d3, 500);
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-left: 15px;
+      margin-bottom: 4px;
+      white-space: nowrap;
+
+      @include media-breakpoint-down(xs) {
+        font-size: 11px;
+        margin-left: 10px;
+      }
+
+      @media only screen and (max-width: 360px) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 140px;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    .view {
+      display: none;
+      width: 40px;
+      height: 45px;
+      padding: 0 7px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      z-index: 999;
+      background-color: transparent;
+
+      .layout__switcher & {
+        display: block;
+      }
+
+      &--vertical {
+        span {
+          display: block;
+          position: absolute;
+          height: 19px;
+          background: white;
+          opacity: 1;
+          top: 13px;
+          transform: rotate(0deg);
+
+          &:nth-child(1) {
+            left: 7px;
+            width: 19px;
+          }
+
+          &:nth-child(2) {
+            right: 7px;
+            width: 3px;
+          }
+        }
+      }
+
+      &--horizontal {
+        span {
+          display: block;
+          position: absolute;
+          width: auto;
+          background: white;
+          opacity: 1;
+          left: 7px;
+          right: 7px;
+          transform: rotate(0deg);
+
+          &:nth-child(1) {
+            top: 13px;
+            height: 12px;
+          }
+
+          &:nth-child(2) {
+            top: 29px;
+            height: 3px;
+          }
+        }
+      }
+    }
+
+    .hamb {
+      width: 50px;
+      height: 45px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 999;
+      background-color: transparent;
+
+      .whitebg & {
+        background-color: white;
+      }
+
+      border: 0;
+
+      span {
+        display: block;
+        position: relative;
+        height: 3px;
+        width: 32px;
+        background-color: white;
+        opacity: 1;
+        transform: rotate(0deg);
+        margin-top: 5px;
+
+        .whitebg & {
+          background-color: black;
+        }
+
+        @include transition(0.5s 'transform');
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:nth-child(2) {
+          transition: none;
+        }
+      }
+
+      &.open {
+        span {
+          &:nth-child(1) {
+            top: 7px;
+            transform: rotate(135deg);
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            top: -9px;
+            transform: rotate(-135deg);
+          }
+        }
+      }
+
+      &:focus {
+        outline: 0;
+        box-shadow: none;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 36px;
+        height: 36px;
+        background-color: transparent;
+
+        span {
+          background: white;
+          width: 22px;
+          margin-top: 4px;
+        }
+
+        &.open {
+          span {
+            margin-top: 4px;
+
+            &:nth-child(3) {
+              top: -7px;
+            }
+          }
+        }
+      }
+    }
+
+    .menu {
+      background-color: $darkBackground;
+      max-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      right: auto;
+      left: 0;
+      width: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 99;
+
+      @include media-breakpoint-down(xs) {
+        align-items: flex-start;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @include transition(0.4s);
+
+      .inner {
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+          width: 100%;
+        }
+
+        @include media-breakpoint-down(xs) {
+          align-items: flex-start;
+        }
+      }
+
+      ul {
+        list-style: none;
+        max-height: 100%;
+        padding: 0 35px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(60px);
+
+        @include media-breakpoint-down(sm) {
+          padding: 0 20px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          text-align: left;
+          opacity: 1;
+          transform: none;
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        li {
+          display: block;
+          margin-bottom: 20px;
+
+          @include media-breakpoint-down(md) {
+            margin-bottom: 15px;
+          }
+
+          @include media-breakpoint-down(xs) {
+            margin-bottom: 5px;
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            @include plain(70px, white, 500);
+            @include transition(0.3s);
+
+            line-height: 1.2;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            display: inline-block;
+
+            @include media-breakpoint-down(lg) {
+              font-size: 52px;
+            }
+
+            @media only screen and (max-width: 340px) {
+              font-size: 40px;
+            }
+
+            &:hover,
+            &.nuxt-link-active {
+              text-decoration: none;
+              border-bottom-color: white;
+            }
+          }
+        }
+      }
+
+      .social {
+        position: absolute;
+        bottom: 40px;
+        left: 20px;
+
+        @include media-breakpoint-up(lg) {
+          left: 80px;
+          bottom: 50px;
+        }
+
+        @include media-breakpoint-only(lg) {
+          left: 50px;
+        }
+
+        a {
+          @include plain(12px, white, 300);
+
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin-right: 15px;
+        }
+      }
+
+      .email {
+        position: absolute;
+        z-index: 9;
+        right: -83px;
+        bottom: 143px;
+        transform: rotate(-90deg);
+
+        @include media-breakpoint-up(lg) {
+          left: -25px;
+          top: 50%;
+          bottom: auto;
+          right: auto;
+          transform: translateY(-50%) rotate(-90deg);
+        }
+
+        @include media-breakpoint-only(lg) {
+          left: -54px;
+        }
+
+        a {
+          @include plain(12px, white, 300);
+
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          display: inline-block;
+        }
+      }
+
+      &.opened {
+        width: 100%;
+
+        ul {
+          animation-name: title_load;
+          animation-duration: 0.6s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+        }
+
+        ul {
+          animation-delay: 0.4s;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 30px 30px 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 15px 15px 0;
+  }
+}

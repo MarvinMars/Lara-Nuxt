@@ -1,0 +1,26 @@
+div {
+  &.iphone-mask {
+    background: url('../../static/images/masks/mobile-border.svg') no-repeat center;
+    background-size: contain;
+    overflow: hidden;
+    padding: 25px 0;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(sm) {
+      width: 385px;
+      height: 750px;
+    }
+
+    > img {
+      mask-image: url('../../static/images/masks/mask.svg');
+      mask-size: cover;
+      display: block;
+      margin: 0 auto !important;
+      width: 83%;
+
+      @include media-breakpoint-down(xs) {
+        width: 65%;
+      }
+    }
+  }
+}

@@ -1,0 +1,251 @@
+&__ui {
+  background-color: #212025;
+  padding: 140px 0;
+
+  @include media-breakpoint-down(lg) {
+    padding: 100px 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 40px 0;
+  }
+
+  h2 {
+    @include plain(40px, $hambColor, 300);
+
+    margin-bottom: 100px;
+
+    @media only screen and (max-width: 1440px) {
+      font-size: 32px;
+      margin-bottom: 60px;
+    }
+
+    @include media-breakpoint-down(md) {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .typography {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 70px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 40px;
+    }
+
+    .title-font {
+      text-align: center;
+      margin-bottom: 80px;
+
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 50px;
+      }
+
+      p {
+        font-size: 80px;
+        line-height: 98px;
+        color: white;
+
+        @media only screen and (max-width: 1440px) {
+          font-size: 70px;
+          line-height: 84px;
+        }
+
+        @include media-breakpoint-down(lg) {
+          font-size: 60px;
+          line-height: 74px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          font-size: 40px;
+          line-height: 60px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .text-font {
+      text-align: center;
+
+      p {
+        font-size: 24px;
+        line-height: 2;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+        @include media-breakpoint-down(lg) {
+          font-size: 20px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    p {
+      &.proxima {
+        font-family: 'Proxima Nova Bold', sans-serif;
+      }
+
+      &.proxima-regular {
+        font-family: 'Proxima Nova Regular', sans-serif;
+        text-transform: none;
+      }
+
+      &.oswald {
+        font-family: 'Oswald', sans-serif;
+      }
+
+      &.graphik {
+        font-family: 'Graphik', sans-serif;
+      }
+
+      &.trade {
+        font-family: 'TradeGothicLTStd-Bold', sans-serif;
+      }
+
+      &.adihaus {
+        font-family: 'AdiHaus', sans-serif;
+        text-transform: none;
+      }
+
+      &.interstate {
+        font-family: 'Interstate-Bold', sans-serif;
+        text-transform: none;
+      }
+
+      &.cambria {
+        font-family: 'Cambria', sans-serif;
+        text-transform: none;
+      }
+
+      &.unitedsans {
+        font-family: 'Undited Sans Cond', sans-serif;
+        text-transform: none;
+      }
+    }
+
+    span {
+      @include plain(18px, #a6a6a8, 300);
+
+      margin-top: 40px;
+      display: block;
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 30px;
+      }
+
+      &::before {
+        content: '';
+        width: 330px;
+        height: 1px;
+        background-color: #a6a6a8;
+        display: block;
+        margin: 0 auto 35px;
+
+        @include media-breakpoint-down(lg) {
+          width: 270px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          margin: 0 auto 20px;
+        }
+      }
+    }
+  }
+
+  .colors {
+    padding-left: 50px;
+
+    @media only screen and (min-width: 1640px) {
+      padding-left: 200px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding-left: 30px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 15px;
+    }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -18px;
+
+      @include media-breakpoint-down(lg) {
+        margin: 0 -10px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin: 0;
+      }
+    }
+
+    .color {
+      width: 50%;
+      margin: 0 0 35px;
+      padding: 0 18px;
+
+      @include media-breakpoint-down(lg) {
+        margin: 0 0 20px;
+        padding: 0 10px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding: 0;
+        width: 100%;
+      }
+
+      .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 360px;
+
+        @include media-breakpoint-down(lg) {
+          height: 280px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          height: 200px;
+        }
+
+        span {
+          @include plain(18px, white, 300);
+        }
+      }
+
+      &--main {
+        width: 100%;
+      }
+
+      &--fullwidth {
+        width: 100%;
+        padding: 0;
+
+        .inner {
+          height: 260px;
+
+          @include media-breakpoint-down(lg) {
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+&__images {
+  display: flex;
+  flex-wrap: wrap;
+
+  .left {
+    width: 40%;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+
+  .right {
+    width: 60%;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    .image {
+      height: 970px;
+
+      @include media-breakpoint-down(lg) {
+        height: 640px;
+      }
+
+      @include media-breakpoint-down(md) {
+        height: 540px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        height: 350px;
+      }
+
+      &--big {
+        height: 100%;
+        width: 100%;
+        //height: 1120px;
+        //width: 60%;
+        //
+        //@include media-breakpoint-down(lg) {
+        //  height: 800px;
+        //}
+        //
+        //@include media-breakpoint-down(md) {
+        //  height: 600px;
+        //}
+        //
+        //@include media-breakpoint-down(sm) {
+        //  height: 270px;
+        //  width: 100%;
+        //}
+      }
+    }
+  }
+
+  .image {
+    height: 560px;
+    position: relative;
+    z-index: 1;
+
+    @include media-breakpoint-down(lg) {
+      height: 400px;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: 300px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: 270px;
+    }
+
+    &--tall {
+      height: 820px;
+
+      @include media-breakpoint-down(lg) {
+        height: 480px;
+      }
+    }
+
+    .inner {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        display: block;
+        background-color: rgba(26, 28, 41, 0.2);
+      }
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+
+      img {
+        width: 175px;
+        height: auto;
+
+        @include media-breakpoint-down(lg) {
+          width: 140px;
+        }
+
+        @include media-breakpoint-down(md) {
+          width: 120px;
+        }
+      }
+    }
+  }
+}

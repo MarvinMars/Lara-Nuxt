@@ -1,0 +1,42 @@
+/* Site Colors */
+$darkBackground: #16191c;
+$lightBackground: #ccc;
+$lightText: #c7c7c7;
+$darkText: #333;
+$lightTitle: #7f7f7f;
+$lineColor: #b2b2b2;
+$hambColor: #d3d3d3;
+
+$projectDarkBackground: #212025;
+$slidesDarkBackground: #191921;
+$slideLink: #5a5a5a;
+$headingCat: #8b8c8e;
+
+$lightGold: #e9dbbc;
+$gold: #daa822;
+$lightGreyText: #8e8c8c;
+$greyBlur: rgba(33, 32, 37, 0.81);
+
+/* General */
+@mixin transition($time) {
+  -webkit-transition: $time;
+  -moz-tranition: $time;
+  -o-transition: $time;
+  transition: $time;
+}
+
+@mixin gradientTop($firstColor, $secondColor) {
+  background: $firstColor; /* Old browsers */
+  background: -moz-linear-gradient(top, $firstColor 0%, $secondColor 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $firstColor 0%, $secondColor 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $firstColor 0%, $secondColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='$firstColor', endColorstr='$secondColor', GradientType=0); /* IE6-9 */
+}
+
+/* Fonts */
+@mixin plain($size, $color, $weight) {
+  font-family: 'Plain', sans-serif;
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+}

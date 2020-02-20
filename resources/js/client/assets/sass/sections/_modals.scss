@@ -1,0 +1,29 @@
+.v--modal {
+  background: transparent;
+  border-radius: 0;
+
+  @include media-breakpoint-down(md) {
+    width: 95% !important;
+    left: 2.5% !important;
+  }
+
+  .dialog-content {
+    background-color: #191819;
+    padding: 2rem;
+    color: $white;
+    @include plain(18px, white, 500);
+
+    .dialog-c-title {
+      font-size: 23px;
+    }
+  }
+
+  .vue-dialog-buttons {
+    background-color: #191819;
+
+    .vue-dialog-button {
+      @include plain(16px, white, 500);
+      text-transform: uppercase;
+    }
+  }
+}

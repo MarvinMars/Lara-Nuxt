@@ -1,0 +1,20 @@
+// General
+@import "libs";
+@import "general/reset";
+@import "general/mixins";
+@import "general/settings";
+@import "general/animations";
+@import "general/masks";
+@import "sections/modals";
+
+// Sections
+@import "sections/error";
+@import "sections/header";
+@import "sections/footer";
+@import "sections/slides";
+@import "sections/projects";
+@import "sections/services";
+@import "sections/works";
+@import "sections/contacts";
+@import "sections/about";
+@import "sections/news";

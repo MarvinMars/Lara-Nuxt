@@ -1,0 +1,167 @@
+&__review {
+  min-height: 650px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  position: relative;
+  padding: 3rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #212025;
+    opacity: 0.9;
+  }
+
+  &--colored {
+    &::after {
+      background-color: #9d2235;
+    }
+  }
+
+  &--iowa {
+    &::after {
+      background-color: #fcd116;
+    }
+  }
+
+  &--kansas {
+    &::after {
+      background-color: #0051ba;
+    }
+  }
+
+  &.disable-bg-color {
+    &::after {
+      display: none;
+    }
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+  }
+
+  .inner {
+    padding: 0 70px 0 300px;
+
+    blockquote {
+      margin-bottom: 40px;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 60px;
+        height: 50px;
+        background-image: url(../../static/img/quotes-icon.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        position: absolute;
+        left: -140px;
+        top: -10px;
+      }
+
+      p {
+        @include plain(26px, white, 300);
+
+        line-height: 50px;
+
+        @media only screen and (max-width: 1440px) {
+          font-size: 22px;
+          line-height: 38px;
+        }
+      }
+    }
+
+    .author {
+      span {
+        @include plain(20px, white, 300);
+
+        margin-bottom: 5px;
+        display: block;
+
+        &::before {
+          content: '';
+          width: 95px;
+          height: 1px;
+          background: white;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 20px;
+
+          @include media-breakpoint-down(sm) {
+            width: 40px;
+          }
+        }
+      }
+
+      p {
+        @include plain(12px, white, 600);
+
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-left: 115px;
+
+        @include media-breakpoint-down(sm) {
+          margin-left: 60px;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    height: 500px;
+
+    .inner {
+      padding: 0 0 0 100px;
+
+      blockquote {
+        &::before {
+          left: -100px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .inner {
+      blockquote {
+        p {
+          font-size: 22px;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: auto;
+    padding: 50px 0;
+
+    .inner {
+      padding: 0;
+
+      blockquote {
+        p {
+          font-size: 18px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
