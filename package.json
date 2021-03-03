@@ -54,7 +54,7 @@
     "laravel-mix": "^4.0.15",
     "node-sass": "^4.11.0",
     "popper.js": "^1.12",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
     "resolve-url-loader": "^2.3.2",
